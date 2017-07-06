@@ -1,0 +1,26 @@
+spring.application.name: ifengtui
+
+logging:
+  file: ${user.home}/logs/${spring.application.name}.log
+  level:
+    org.springframework: INFO
+    com.boxfishedu: DEBUG
+    tk.mybatis: DEBUG
+server:
+  port: 8093
+  servlet-path: /ifengtui
+
+spring.profiles.active: testOut
+
+---
+spring:
+  profiles: testOut
+
+  datasource:
+    url:  jdbc:mysql://182.92.84.112:3306/shanggong?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: sg123456
+    driverClassName: com.mysql.jdbc.Driver
+    validation-query: SELECT 1
+    test-while-idle: true
+
